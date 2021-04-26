@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 let searchButton = document.querySelector("#search")
 
 //Add an event listener to the button that runs the function sendApiRequestwhen it is clicked
