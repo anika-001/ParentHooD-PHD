@@ -1,6 +1,5 @@
 import cv2, time, pandas
 from datetime import datetime
-
 first_frame=None
 status_list=[None,None]
 times=[]
