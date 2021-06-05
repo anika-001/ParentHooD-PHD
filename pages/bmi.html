@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html ng-app="bmiApp">
+
+<head>  <title>BMI Calculator</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link data-require="bootstrap-css@3.1.1" data-semver="3.1.1" rel="stylesheet"
+    href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/layout/styles/layout.css" />
+
+  
+  <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script data-require="bootstrap@3.1.1" data-semver="3.1.1" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script data-require="angular.js@1.2.13" data-semver="1.2.13" src="http://code.angularjs.org/1.2.13/angular.js"></script>
+  <script src="..\Physical_Health\BMI\script.js"></script>
+
+</head>
+
+  <body id="top" data-ng-controller="bmiController" style="background-color:#F4F4F4;">
+  <div class="wrapper row0">
+    <div id="topbar" class="hoc clear">
+      <div class="fl_left">
+        <!-- ################################################################################################ -->
+        <ul class="nospace">
+          <li><i class="fas fa-phone rgtspace-5"></i> +00 (123) 456 7890</li>
+          <li><i class="far fa-envelope rgtspace-5"></i> parenthood@gmail.com</li>
+        </ul>
+        <!-- ################################################################################################ -->
+      </div>
+      <div class="fl_right">
+        <!-- ################################################################################################ -->
+        <ul class="nospace">
+          <li><a href="..\index.html" title="Home"><i class="fas fa-home"></i></a></li>
+          <li><a href="#" title="Help Centre"><i class="far fa-life-ring"></i></a></li>
+          <li><a href="..\pages\login.html" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
+          <li><a href="..\pages\signup.html" title="Sign Up"><i class="fas fa-edit"></i></a></li>
+          <li id="searchform">
+            <div>
+              <form action="#" method="post">
+                <fieldset>
+                  <legend>Quick Search:</legend>
+                  <input type="text" placeholder="Enter search term&hellip;">
+                  <button type="submit"><i class="fas fa-search"></i></button>
+                </fieldset>
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <div id="logo" class="fl_left">
+
+        <!-- ################################################################################################ -->
+        <h1><a href="..\index.html">
+            <img src="images\demo\gallery\Logo.svg" alt="" width="10" height="30">
+            ParentHooD</a></h1>
+        <!-- ################################################################################################ -->
+      </div>
+      <nav id="mainav" class="fl_right">
+        <!-- ################################################################################################ -->
+        <ul class="clear">
+          <li class="active"><a href="..\index.html">Home</a></li>
+          <li><a class="drop" href="#">Features</a>
+            <ul>
+              <li><a class="drop" href="#">Mental Health</a>
+                <ul>
+                  <li><a href="..\Mental_Health\art_craft.html">Art and Craft</a></li>
+                  <li><a href="..\Mental_Health\shows.html">Shows to watch</a></li>
+                  <li><a href="..\Mental_Health\games.html">Creative Games</a></li>
+                </ul>
+              </li>              
+              <li><a class="drop" href="#">Physical Health</a>
+                <ul>
+                  <li><a href="..\Physical_Health\Excercise\exercise.html">Physical Activities</a></li>
+                  <li><a href="..\Physical_Health\BMI\bmi.html">BMI Calculator</a></li>
+                  <li><a href="..\Physical_Health\Nutrition\recipe.html">Nutrition</a></li>
+                </ul>
+              </li>
+              <li><a href="..\Motion_Detection\child_monitoring.html">Child Monitoring</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Academics</a>
+              <ul>
+                <li><a href="..\Academics\study_planner.html">Study Planner</a></li>
+                <li><a href="..\Academics\study_material.html">Study Material</a></li>
+              </ul>
+           </li>
+          <li><a href="..\pages\login.html">Login</a></li>
+          <li><a href="..\pages\signup.html">Sign Up</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <div class="container" >
+    <div class="row" >
+      <div class="col-md-12" >
+        <div class="wrapper row1" >
+        <h6 class="jumbotron text-center " style="background-color:#FF3F4A;">BMI Calculator</h6> 
+    </div>
+        <form role="form"> 
+          <div class="form-group">
+            <div class="radio">
+              <label>
+                <input type="radio" ng-model="units" value="imperial">
+                <span class="label label-danger">Imperial</span> 
+              </label>
+            </div> 
+            
+            <div class="radio">
+              <label>
+                <input type="radio" ng-model="units" value="metric">
+                <span class="label label-success">Metric</span>
+              </label>
+            </div>
+            
+          </div>
+          
+          <div id="metric" ng-show="units == 'imperial'">
+            <div class="form-group">
+              <label for="weight" style="color:#0a0a0a;">Weight (lb):</label>
+              <input type="number" ng-model="weight_lb" 
+              id="weight"
+              placeholder="weight in lb" class="form-control">    
+            </div>
+            
+            <div class="form-group">
+              <label for="weight_foot" style="color:#0a0a0a;">Height (foot):</label>
+              <input type="number" ng-model="height_foot" 
+              id="weight_foot"
+              placeholder="height in foot" class="form-control">    
+            </div>
+            
+            <div class="form-group">
+              <label for="height_inch" style="color:#0a0a0a;">Height (inch):</label>
+              <input type="number" ng-model="height_inch" 
+              id="height_inch"
+              placeholder="height in inch" class="form-control">    
+            </div>
+          </div>
+          
+          <div id="metric" ng-show="units == 'metric'">
+            <div class="form-group">
+              <label for="weight_kg" style="color:#0a0a0a;" >Weight (kg):</label>
+              <input type="number" ng-model="weight_kg" 
+              id="weight_kg"
+              placeholder="weight in kg" class="form-control">    
+            </div>
+            
+            <div class="form-group">
+              <label for="height_cm" style="color:#0a0a0a;" >Height (cm):</label>
+              <input type="number" ng-model="height_cm" 
+              id="height_cm"
+              placeholder="height in cm" class="form-control">    
+            </div>
+            
+          </div>
+        </form>
+        
+        <!-- Calculated BMI is shown here -->
+        <div class="well text-center" style="background-color:#fdfdfd;">
+          <h3 class="text-muted" style="color:#0a0a0a;" >Calculated BMI</h3>
+          <h2><span class="label label-{{catClass}}" title="{{catTitle}}">{{bmi | number:1}}</span></h2>
+          <h4 class="text-muted" style="color:#000000;">{{catTitle}}</h4>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+
+
+</body>
+
+</html>
