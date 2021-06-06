@@ -61,6 +61,15 @@ File: Layout CSS
 #pageintro .heading{margin-bottom:20px; font-size:4rem;}
 #pageintro footer{margin-top:50px;}
 
+/* Pageintro for study materal
+--------------------------------------------------------------------------------------------------------------- */
+#pageint{padding:200px 0 300px;}/* 300px => 100px for #introblocks negative margin */
+
+#pageint article, #pageint article p{display:block; max-width:150%; margin:0 auto; text-align:center;}
+#pageint article p{max-width:65%; line-height:2rem;}
+#pageint .heading{margin-bottom:20px; font-size:4rem;}
+#pageint footer{margin-top:50px;}
+
 
 /* Introblocks - x3
 --------------------------------------------------------------------------------------------------------------- */
