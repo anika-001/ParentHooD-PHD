@@ -1,3 +1,17 @@
+<?php
+include '..\.\config.php';
+session_start();
+
+if (!isset($_SESSION["user_id"])) {
+    header("Location: index.php");
+}
+//echo $_SESSION["user_id"];
+$id=$_SESSION["user_id"];
+$check_name = mysqli_query($conn, "SELECT full_name FROM users WHERE id='$id'");
+$row = mysqli_fetch_assoc($check_name);
+$_SESSION["user_name"] = $row['full_name'];
+//echo $_SESSION["user_name"];
+?>
 <!DOCTYPE html>
 
 <html ng-app="bmiApp">
@@ -6,11 +20,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link data-require="bootstrap-css@3.1.1" data-semver="3.1.1" rel="stylesheet"
-    href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+  
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/layout/styles/layout.css" />
+  <link rel="stylesheet" href="..\layout\styles\layout.css" />
 
   
   <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
@@ -58,42 +71,42 @@
       <div id="logo" class="fl_left">
 
         <!-- ################################################################################################ -->
-        <h1><a href="..\index.html">
-            <img src="images\demo\gallery\Logo.svg" alt="" width="10" height="30">
+        <h1><a href="..\welcome.php">
+            <img src="..\images\demo\gallery\Logo.svg" alt="" width="10" height="30">
             ParentHooD</a></h1>
         <!-- ################################################################################################ -->
       </div>
       <nav id="mainav" class="fl_right">
         <!-- ################################################################################################ -->
         <ul class="clear">
-          <li class="active"><a href="..\index.html">Home</a></li>
+          <li class="active"><a href="..\welcome.php">Home</a></li>
           <li><a class="drop" href="#">Features</a>
             <ul>
-              <li><a class="drop" href="#">Mental Health</a>
+            <li><a class="drop" href="#">Mental Health</a>
                 <ul>
-                  <li><a href="..\Mental_Health\art_craft.html">Art and Craft</a></li>
-                  <li><a href="..\Mental_Health\shows.html">Shows to watch</a></li>
-                  <li><a href="..\Mental_Health\games.html">Creative Games</a></li>
+                  <li><a href="Mental_Health\art_craft.php">Art and Craft</a></li>
+                  <li><a href="Mental_Health\shows.php">Shows to watch</a></li>
+                  <li><a href="Mental_Health\games.php">Creative Games</a></li>
                 </ul>
-              </li>              
+              </li>               
               <li><a class="drop" href="#">Physical Health</a>
                 <ul>
-                  <li><a href="..\Physical_Health\Excercise\exercise.html">Physical Activities</a></li>
-                  <li><a href="..\Physical_Health\BMI\bmi.html">BMI Calculator</a></li>
-                  <li><a href="..\Physical_Health\Nutrition\recipe.html">Nutrition</a></li>
+                  <li><a href="..\Physical_Health\Excercise\exercise.php">Physical Activities</a></li>
+                  <li><a href="..\pages\bmi.php">BMI Calculator</a></li>
+                  <li><a href="..\Physical_Health\Nutrition\recipe.php">Nutrition</a></li>
                 </ul>
               </li>
-              <li><a href="..\Motion_Detection\child_monitoring.html">Child Monitoring</a></li>
+              <li><a href="..\Motion_Detection\child_monitoring.php">Child Monitoring</a></li>
             </ul>
           </li>
           <li><a href="#">Academics</a>
               <ul>
-                <li><a href="..\Academics\study_planner.html">Study Planner</a></li>
-                <li><a href="..\Academics\study_material.html">Study Material</a></li>
+                <li><a href="..\Academics\study_planner.php">Study Planner</a></li>
+                <li><a href="..\Academics\study_material.php">Study Material</a></li>
               </ul>
            </li>
-          <li><a href="..\pages\login.html">Login</a></li>
-          <li><a href="..\pages\signup.html">Sign Up</a></li>
+       
+          <li><a href="..\logout.php">Log Out</a></li>
         </ul>
       </nav>
     </header>

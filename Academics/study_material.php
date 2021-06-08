@@ -1,3 +1,17 @@
+<?php
+include '..\.\config.php';
+session_start();
+
+if (!isset($_SESSION["user_id"])) {
+    header("Location: index.php");
+}
+//echo $_SESSION["user_id"];
+$id=$_SESSION["user_id"];
+$check_name = mysqli_query($conn, "SELECT full_name FROM users WHERE id='$id'");
+$row = mysqli_fetch_assoc($check_name);
+$_SESSION["user_name"] = $row['full_name'];
+//echo $_SESSION["user_name"];
+?>
 <!DOCTYPE html>
 
 <html lang="">
@@ -5,10 +19,10 @@
   <title>Study Planner</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link href="\layout\styles\layout.css" rel="stylesheet" type="text/css" media="all">
-    <script src="layout/scripts/jquery.min.js"></script>
-  <script src="layout/scripts/jquery.backtotop.js"></script>
-  <script src="layout/scripts/jquery.mobilemenu.js"></script>
+  <link href="..\.\layout\styles\layout.css" rel="stylesheet" type="text/css" media="all">
+    <script src="..\.\layout\scripts\jquery.min.js"></script>
+  <script src="..\.\layout\scripts\jquery.backtotop.js"></script>
+  <script src="..\.\layout\scripts\jquery.mobilemenu.js"></script>
 </head>
 
 <body id="top">
@@ -28,10 +42,10 @@
       <div class="fl_right">
         <!-- ################################################################################################ -->
         <ul class="nospace">
-          <li><a href="..\index.html" title="Home"><i class="fas fa-home"></i></a></li>
+          <li><a href="..\welcome.php" title="Home"><i class="fas fa-home"></i></a></li>
           <li><a href="#" title="Help Centre"><i class="far fa-life-ring"></i></a></li>
-          <li><a href="..\pages\login.html" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
-          <li><a href="..\pages\signup.html" title="Sign Up"><i class="fas fa-edit"></i></a></li>
+         
+          <li><a href="..\logout.php" title="Log out"><i class="fas fa-edit"></i></a></li>
           <li id="searchform">
             <div>
               <form action="#" method="post">
@@ -56,42 +70,42 @@
       <div id="logo" class="fl_left">
 
         <!-- ################################################################################################ -->
-        <h1><a href="..\index.html">
-            <img src="images\demo\gallery\Logo.svg" alt="" width="10" height="30">
+        <h1><a href="..\welcome.php">
+            <img src="..\images\demo\gallery\Logo.svg" alt="" width="10" height="30">
             ParentHooD</a></h1>
         <!-- ################################################################################################ -->
       </div>
       <nav id="mainav" class="fl_right">
         <!-- ################################################################################################ -->
         <ul class="clear">
-          <li class="active"><a href="..\index.html">Home</a></li>
+          <li class="active"><a href="..\welcome.php">Home</a></li>
           <li><a class="drop" href="#">Features</a>
             <ul>
-              <li><a class="drop" href="#">Mental Health</a>
+            <li><a class="drop" href="#">Mental Health</a>
                 <ul>
-                  <li><a href="..\Mental_Health\art_craft.html">Art and Craft</a></li>
-                  <li><a href="..\Mental_Health\shows.html">Shows to watch</a></li>
-                  <li><a href="..\Mental_Health\games.html">Creative Games</a></li>
+                  <li><a href="Mental_Health\art_craft.php">Art and Craft</a></li>
+                  <li><a href="Mental_Health\shows.php">Shows to watch</a></li>
+                  <li><a href="Mental_Health\games.php">Creative Games</a></li>
                 </ul>
-              </li>              
+              </li>               
               <li><a class="drop" href="#">Physical Health</a>
                 <ul>
-                  <li><a href="..\Physical_Health\Excercise\exercise.html">Physical Activities</a></li>
-                  <li><a href="..\pages\bmi.html">BMI Calculator</a></li>
-                  <li><a href="..\Physical_Health\Nutrition\recipe.html">Nutrition</a></li>
+                  <li><a href="..\Physical_Health\Excercise\exercise.php">Physical Activities</a></li>
+                  <li><a href="..\pages\bmi.php">BMI Calculator</a></li>
+                  <li><a href="..\Physical_Health\Nutrition\recipe.php">Nutrition</a></li>
                 </ul>
               </li>
-              <li><a href="..\Motion_Detection\child_monitoring.html">Child Monitoring</a></li>
+              <li><a href="..\Motion_Detection\child_monitoring.php">Child Monitoring</a></li>
             </ul>
           </li>
           <li><a href="#">Academics</a>
               <ul>
-                <li><a href="..\Academics\study_planner.html">Study Planner</a></li>
-                <li><a href="..\Academics\study_material.html">Study Material</a></li>
+                <li><a href="..\Academics\study_planner.php">Study Planner</a></li>
+                <li><a href="..\Academics\study_material.php">Study Material</a></li>
               </ul>
            </li>
-          <li><a href="..\pages\login.html">Login</a></li>
-          <li><a href="..\pages\signup.html">Sign Up</a></li>
+       
+          <li><a href="..\logout.php">Log Out</a></li>
         </ul>
       </nav>
     </header>
