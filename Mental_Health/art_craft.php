@@ -1,3 +1,18 @@
+<?php
+include '..\.\config.php';
+session_start();
+
+if (!isset($_SESSION["user_id"])) {
+    header("Location: index.php");
+}
+//echo $_SESSION["user_id"];
+$id=$_SESSION["user_id"];
+$check_name = mysqli_query($conn, "SELECT full_name FROM users WHERE id='$id'");
+$row = mysqli_fetch_assoc($check_name);
+$_SESSION["user_name"] = $row['full_name'];
+//echo $_SESSION["user_name"];
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -9,12 +24,16 @@
   <meta http-equiv="X-UA-Conpatible" content="IE-edge" />
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/layout/styles/layout.css" />
-  <link rel="stylesheet" href="/Physical_Health/Excercise/layout.css" />
+  <link href="..\.\layout\styles\layout.css" rel="stylesheet" type="text/css" media="all">
+  <link rel="stylesheet" href="..\.\Physical_Health\Excercise\layout.css" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 
@@ -38,8 +57,8 @@
         <ul class="nospace">
           <li><a href="..\index.html" title="Home"><i class="fas fa-home"></i></a></li>
           <li><a href="#" title="Help Centre"><i class="far fa-life-ring"></i></a></li>
-          <li><a href="..\pages\login.html" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
-          <li><a href="..\pages\signup.html" title="Sign Up"><i class="fas fa-edit"></i></a></li>
+         
+          <li><a href="..\logout.php" title="Log Out"><i class="fas fa-edit"></i></a></li>
           <li id="searchform">
             <div>
               <form action="#" method="post">
@@ -65,7 +84,7 @@
 
         <!-- ################################################################################################ -->
         <h1><a href="..\index.html">
-            <img src="images\demo\gallery\Logo.svg" alt="" width="10" height="30">
+            <img src="..\.\images\demo\gallery\Logo.svg" alt="" width="10" height="30">
             ParentHooD</a></h1>
         <!-- ################################################################################################ -->
       </div>
@@ -77,7 +96,7 @@
             <ul>
               <li><a class="drop" href="#">Mental Health</a>
                 <ul>
-                  <li><a href="..\Mental_Health\art_craft.html">Art and Craft</a></li>
+                  <li><a href="..\Mental_Health\art_craft.php">Art and Craft</a></li>
                   <li><a href="..\Mental_Health\shows.html">Shows to watch</a></li>
                   <li><a href="..\Mental_Health\games.html">Creative Games</a></li>
                 </ul>
@@ -98,8 +117,8 @@
                 <li><a href="..\Academics\study_material.html">Study Material</a></li>
               </ul>
            </li>
-          <li><a href="..\pages\login.html">Login</a></li>
-          <li><a href="..\pages\signup.html">Sign Up</a></li>
+         
+          <li><a href="..\logout.php">Log out</a></li>
         </ul>
       </nav>
     </header>
