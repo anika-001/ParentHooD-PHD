@@ -107,10 +107,9 @@ if (isset($_POST["signin"])) {
     <div class="panels-container">
       <div class="panel left-panel">
         <div class="content">
-          <h3>New here ?</h3>
+          <h3>Hello there!</h3>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-            ex ratione. Aliquid!
+            Let's go into the world of PHD:ParentHooD! See you there!!
           </p>
           <button class="btn transparent" id="sign-up-btn">
             Sign up
@@ -120,10 +119,9 @@ if (isset($_POST["signin"])) {
       </div>
       <div class="panel right-panel">
         <div class="content">
-          <h3>One of us ?</h3>
+          <h3>Alredy an User?</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            laboriosam ad deleniti.
+            Click here to dive straight into the world of PHD:ParentHooD!!
           </p>
           <button class="btn transparent" id="sign-in-btn">
             Sign in
@@ -136,6 +134,17 @@ if (isset($_POST["signin"])) {
 
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
   <script src="app.js"></script>
+  <script type="text/javascript">
+    (function(d, m){
+        var kommunicateSettings = 
+            {"appId":"fcb08ba8f0778cce70e9a89f25d217ff","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+</script>
 </body>
 
 </html>

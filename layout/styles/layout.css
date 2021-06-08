@@ -116,7 +116,7 @@ File: Layout CSS
 #testimonials figure *{margin:0; line-height:1;}
 #testimonials figure img{float:left; margin:0 15px;}
 #testimonials figcaption{float:left; margin-top:10px;}
-#testimonials figcaption .heading{font-size:1.2rem; font-weight:700;}
+.heading1{font-size:5rem; font-weight:700;}
 #testimonials figcaption em{font-size:.8rem;}
 #testimonials footer{text-align:center;}
 

@@ -408,18 +408,16 @@ And so when one of my kids comes up to me and asks me to play pretend or read th
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyD95mJ8u55zn8owB_YAjNQ65xskjLyxgOE",
-    authDomain: "phd-parenthood.firebaseapp.com",
-    projectId: "phd-parenthood",
-    storageBucket: "phd-parenthood.appspot.com",
-    messagingSenderId: "821214019448",
-    appId: "1:821214019448:web:16e56795f622ba3381128d"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+     <script type="text/javascript">
+    (function(d, m){
+        var kommunicateSettings = 
+            {"appId":"fcb08ba8f0778cce70e9a89f25d217ff","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
 </script>
 <script src="./myfunc.js"></script>
 </body>
