@@ -111,7 +111,7 @@ echo $_SESSION["user_name"];
                 <ul>
                   <li><a href="Physical_Health\Excercise\exercise.html">Physical Activities</a></li>
                   <li><a href="pages\bmi.html">BMI Calculator</a></li>
-                  <li><a href="Physical_Health\Nutrition\recipe.html">Nutrition</a></li>
+                  <li><a href="pages\recipe.html">Nutrition</a></li>
                 </ul>
               </li>
               <li><a href="Motion_Detection\child_monitoring.html">Child Monitoring</a></li>
