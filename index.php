@@ -82,31 +82,7 @@ include 'config.php';
         <!-- ################################################################################################ -->
         <ul class="clear">
           <li class="active"><a href="..\welcome.php">Home</a></li>
-          <li><a class="drop" href="#">Features</a>
-            <ul>
-              <li><a class="drop" href="#">Mental Health</a>
-                <ul>
-                  <li><a href="Mental_Health\art_craft.php">Art and Craft</a></li>
-                  <li><a href="Mental_Health\shows.php">Shows to watch</a></li>
-                  <li><a href="Mental_Health\games.phpl">Creative Games</a></li>
-                </ul>
-              </li>              
-              <li><a class="drop" href="#">Physical Health</a>
-                <ul>
-                  <li><a href="Physical_Health\Excercise\exercise.php">Physical Activities</a></li>
-                  <li><a href="pages\bmi.php">BMI Calculator</a></li>
-                  <li><a href="pages\recipe.php">Nutrition</a></li>
-                </ul>
-              </li>
-              <li><a href="Motion_Detection\child_monitoring.php">Child Monitoring</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Academics</a>
-              <ul>
-                <li><a href="Academics\study_planner.php">Study Planner</a></li>
-                <li><a href="Academics\study_material.php">Study Material</a></li>
-              </ul>
-           </li>
+          
          
           <li><a href="login.php">Log In/Sign Up</a></li>
          
